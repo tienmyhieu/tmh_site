@@ -4,6 +4,8 @@ namespace lib\core;
 
 readonly class TmhRoute
 {
+    private const string DEFAULT_ROUTE = 'umd0xr1h';
+
     private string $route;
     private array $routes;
 
@@ -11,6 +13,11 @@ readonly class TmhRoute
     {
         $this->routes = $this->json->routes();
         $this->initializeRoute();
+    }
+
+    public function defaultRoute(): array
+    {
+        return $this->routes[self::DEFAULT_ROUTE];
     }
 
     public function route(): string

@@ -11,7 +11,7 @@ readonly class TmhJson
 
     public function entity(string $path, string $file): array
     {
-        return $this->loadFile(__DIR__ . '/../../entities/' . $path . '/', $file);
+        return $this->loadFile(__DIR__ . '/../../entities' . $path . '/', $file);
     }
 
     public function locale(string $locale): array
@@ -31,7 +31,7 @@ readonly class TmhJson
             // echo "<pre>" . 'reading ' . $path . $file . PHP_EOL . "</pre>";
             $contents = file_get_contents($path . $file . '.json');
         } else {
-            echo "<pre>" . 'not reading ' . $path . $file . PHP_EOL . "</pre>";
+            // echo "<pre>" . 'not reading ' . $path . $file . PHP_EOL . "</pre>";
         }
         return json_decode($contents, $associative);
     }
