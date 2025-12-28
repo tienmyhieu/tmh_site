@@ -11,10 +11,12 @@ readonly class TmhEntityFactory
     public function create(): array
     {
         $route = $this->routeFactory->create();
-        $entity = $this->json->entity('/' .str_replace('.', '/', $route['code']), $route['entity']);
+        $entity = $this->json->entity('/' . str_replace('.', '/', $route['code']), $route['entity']);
+        $entity['type'] = $route['entity'];
         if (!count($entity)) {
             $route = $this->routeFactory->parent();
-            $entity = $this->json->entity('/' .str_replace('.', '/', $route['code']), $route['entity']);
+            $entity = $this->json->entity('/' . str_replace('.', '/', $route['code']), $route['entity']);
+            $entity['type'] = $route['entity'];
         }
         return $entity;
     }

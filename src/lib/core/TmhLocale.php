@@ -13,6 +13,11 @@ readonly class TmhLocale
         $this->locales = $this->json->locale($this->locale);
     }
 
+    public function get(string $uuid): string
+    {
+        return in_array($uuid, array_keys($this->locales)) ? $this->locales[$uuid] : $uuid;
+    }
+
     public function locale(): string
     {
         return $this->locale;

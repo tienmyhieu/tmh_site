@@ -20,6 +20,11 @@ readonly class TmhRoute
         return $this->routes[self::DEFAULT_ROUTE];
     }
 
+    public function get(string $uuid): array
+    {
+        return in_array($uuid, array_keys($this->routes)) ? $this->routes[$uuid] : [];
+    }
+
     public function route(): string
     {
         return $this->route;
