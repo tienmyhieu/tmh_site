@@ -1,5 +1,20 @@
 {
-  "image_group_list": [
-    { "active": "1", "code": "bnfr_1", "identifier": "Y12079", "image_group": "dv9sz3ed", "translation": "" }
+  "dated": "1",
+  "diameter": "50.50",
+  "obverse": "qxfco1bg",
+  "reverse": "hruripe1",
+  "type": "",
+  "weight": "32.77",
+  "image_group_list": {
+    "translation": "",
+    "items": [
+      { "identifier": "1822", "image_group": "dv9sz3ed", "route": "", "source": "qc1my5z5", "translation": "" },
+      { "identifier": "8-嗣-50", "image_group": "c4yld4kf", "route": "", "source": "524pcvrh", "translation": "" }
+    ]
+  },
+  "upload_group_list": [],
+  "citation_list": [
+    { "lang": "fr", "page": "", "plate": "33", "translation": "g24mcucr" },
+    { "lang": "ja", "page": "224", "plate": "", "translation": "yo8nlu7d" }
   ]
 }

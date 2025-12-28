@@ -1,5 +1,22 @@
 {
-  "image_group_list": [
-    { "active": "1", "code": "hccv_1", "identifier": "194", "image_group": "qoqm9mhr", "translation": "" }
+  "dated": "1",
+  "diameter": "50.52",
+  "obverse": "qxfco1bg",
+  "reverse": "hruripe1",
+  "type": "",
+  "weight": "42.41",
+  "image_group_list": {
+    "translation": "",
+    "items": [
+      { "identifier": "1803013-114", "image_group": "qoqm9mhr", "route": "", "source": "hjj5vwe5", "translation": "" },
+      { "identifier": "194", "image_group": "z7fhuy8s", "route": "", "source": "8svsky3w", "translation": "" },
+      { "identifier": "194", "image_group": "1u4nx4oa", "route": "", "source": "8svsky3w", "translation": "" }
+    ]
+  },
+  "upload_group_list": [
+    { "identifier": "1803013-114", "upload_group": "hgsg1ob8", "route": "", "source": "hjj5vwe5", "translation": "" }
+  ],
+  "citation_list": [
+    { "lang": "en", "page": "306", "plate": "", "translation": "swn15bxv" }
   ]
 }

@@ -1,6 +1,12 @@
 {
   "umd0xr1h": { "code": "", "href": [], "identifier": "", "entity": "toc" },
   "tyr8xxy2": { "code": "bb", "href": ["jnfvwgrt"], "identifier": "", "entity": "metal" },
+  "dgp2tuwm": { "code": "bb.pvtdktvv", "href": ["jnfvwgrt", "hruripe1"], "identifier": "", "entity": "metal_coin" },
   "nexnk30y": { "code": "bb.td", "href": ["jnfvwgrt", "qxfco1bg"], "identifier": "", "entity": "metal_emperor" },
-  "xa7hqyir": { "code": "bb.td.pvtdktvv", "href": ["jnfvwgrt", "qxfco1bg", "hruripe1"], "identifier": "", "entity": "metal_emperor_coin" }
+  "xa7hqyir": { "code": "bb.td.pvtdktvv", "href": ["jnfvwgrt", "qxfco1bg", "hruripe1"], "identifier": "", "entity": "metal_emperor_coin" },
+  "hjj5vwe5": { "code": "huay", "href": ["e3rnzcx5", "iuh92t7v"], "identifier": "", "entity": "auction" },
+  "qc1my5z5": { "code": "cmv1", "href": ["3hdo2o1k", "npululiv"], "identifier": "", "entity": "book" },
+  "8svsky3w": { "code": "hccv", "href": ["3hdo2o1k", "wjlo4lqn"], "identifier": "", "entity": "book" },
+  "524pcvrh": { "code": "amh1", "href": ["3hdo2o1k", "xq7871td"], "identifier": "", "entity": "book" },
+  "e7e2tq5u": { "code": "gidi", "href": ["95rzmnu3", "fkopup0j"], "identifier": "", "entity": "collection" }
 }

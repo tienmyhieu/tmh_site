@@ -1,5 +1,18 @@
 {
-  "image_group_list": [
-    { "active": "1", "code": "gidi_1", "identifier": "8", "image_group": "9bmmcoq5", "translation": "" }
-  ]
+  "dated": "0",
+  "diameter": "",
+  "obverse": "qxfco1bg",
+  "reverse": "hruripe1",
+  "type": "",
+  "weight": "",
+  "image_group_list": {
+    "translation": "",
+    "items": [
+      { "identifier": "8", "image_group": "9bmmcoq5", "route": "", "source": "e7e2tq5u", "translation": "" }
+    ]
+  },
+  "upload_group_list": [
+    { "identifier": "8", "upload_group": "szya9vrf", "route": "", "source": "e7e2tq5u", "translation": "" }
+  ],
+  "citation_list": []
 }

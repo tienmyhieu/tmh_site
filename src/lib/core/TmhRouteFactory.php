@@ -69,7 +69,9 @@ class TmhRouteFactory
         foreach ($this->routes as $routeKey => $route) {
             $key = '';
             foreach ($route['href'] as $href) {
-                $key .= str_replace(' ', '_', $this->locales[$href]) . '/';
+                if (in_array($href, array_keys($this->locales))) {
+                    $key .= str_replace(' ', '_', $this->locales[$href]) . '/';
+                }
             }
             $key = substr($key, 0, -1);
             $transformed[$key] = $routeKey;

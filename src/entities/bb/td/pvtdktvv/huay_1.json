@@ -1,5 +1,18 @@
 {
-  "image_group_list": [
-    { "active": "1", "code": "huay_1", "identifier": "661066069", "image_group": "fo0u12rq", "translation": "" }
-  ]
+  "dated": "0",
+  "diameter": "51.20",
+  "obverse": "qxfco1bg",
+  "reverse": "hruripe1",
+  "type": "",
+  "weight": "39.90",
+  "image_group_list": {
+    "translation": "",
+    "items": [
+      { "identifier": "661066069", "image_group": "fo0u12rq", "route": "", "source": "hjj5vwe5", "translation": "" }
+    ]
+  },
+  "upload_group_list": [
+    { "identifier": "661066069", "upload_group": "72sz9vcr", "route": "", "source": "hjj5vwe5", "translation": "" }
+  ],
+  "citation_list": []
 }
