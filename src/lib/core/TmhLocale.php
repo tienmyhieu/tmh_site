@@ -18,6 +18,11 @@ readonly class TmhLocale
         return in_array($uuid, array_keys($this->locales)) ? $this->locales[$uuid] : $uuid;
     }
 
+    public function getMany(array $uuids): array
+    {
+        return array_map(function ($uuid) { return $this->get($uuid); }, $uuids);
+    }
+
     public function locale(): string
     {
         return $this->locale;
