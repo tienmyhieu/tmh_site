@@ -16,7 +16,8 @@ readonly class TmhEntityFactory
             $route = $this->routeFactory->parent();
             $entity = $this->json->entity('/' . str_replace('.', '/', $route['code']), $route['entity']);
         }
-        $entity['type'] = $route['entity'];
+        $isGroup = 4 == strlen($route['entity']);
+        $entity['type'] = $isGroup ? 'metal_emperor_coin_group' : $route['entity'];
         return $entity;
     }
 }

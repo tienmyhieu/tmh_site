@@ -20,6 +20,7 @@ readonly class TmhEmperorCoin
         $transformed = [];
         $transformed['obverse'] = $this->locale->get($entity['obverse']);
         $transformed['reverse'] = $this->locale->get($entity['reverse']);
+        $transformed['type'] = $entity['type'];
         $this->setParentRoute($entity['route'], $entity['type']);
         $transformed['image_group_lists'] = [];
         foreach ($entity['image_group_lists'] as $imageGroupList) {
@@ -28,9 +29,10 @@ readonly class TmhEmperorCoin
             $transformedImageGroupList['items'] = [];
             $imageGroups = $this->filterActiveImageGroups($imageGroupList['items']);
             foreach ($imageGroups as $imageGroup) {
-                $imageGroup['route'] = $this->imageGroupRoute($imageGroup);
-                $imageGroup['translation'] = $this->imageGroupTranslation($imageGroup);
-                $transformedImageGroupList['items'][] = $this->imageGroup->transform($imageGroup, $entity['type']);
+                $transformedImageGroup = $this->imageGroup->transform($imageGroup, $entity['type']);
+                $transformedImageGroup['translation'] = $this->imageGroupTranslation($imageGroup);
+                $transformedImageGroup['route'] = $this->imageGroupRoute($imageGroup);
+                $transformedImageGroupList['items'][] = $transformedImageGroup;
             }
             $transformed['image_group_lists'][] = $transformedImageGroupList;
         }

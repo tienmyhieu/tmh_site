@@ -5,9 +5,9 @@ namespace lib\transformers;
 use lib\core\TmhLocale;
 use lib\core\TmhRoute;
 
-class TmhRouteTransformer
+readonly class TmhRouteTransformer
 {
-    private const array EMPEROR_TYPES = ['metal_emperor', 'metal_emperor_coin'];
+    private const array EMPEROR_TYPES = ['metal_coin', 'metal_emperor', 'metal_emperor_coin'];
 
     public function __construct(private TmhLocale $locale, private TmhRoute $route)
     {

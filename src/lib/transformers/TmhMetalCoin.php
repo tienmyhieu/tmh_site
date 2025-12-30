@@ -16,18 +16,22 @@ readonly class TmhMetalCoin
     public function transform(array $entity): array
     {
         $transformed = [];
-        $transformed['obverse'] = $this->locale->get($entity['obverse']);
-        $transformed['reverse'] = $this->locale->get($entity['reverse']);
+        $coin = $this->locale->get($entity['topic']);
+        $transformed['title'] = $this->locale->get($entity['title']);
+        $transformed['topic'] = $coin;
+        $transformed['type'] = $entity['type'];
         $transformed['image_group_lists'] = [];
         foreach ($entity['image_group_lists'] as $imageGroupList) {
             $transformedImageGroupList = [];
             $transformedImageGroupList['translation'] = $this->locale->get($imageGroupList['translation']);
             $transformedImageGroupList['items'] = [];
+            $emperor = $this->locale->get($imageGroupList['translation']);
             foreach ($imageGroupList['items'] as $imageGroup) {
-                $routeEntity = ['entity' => $imageGroup['source'], 'type' => $entity['type']];
-                $imageGroup['route'] = $this->routeTransformer->transform($routeEntity, $entity['type']);
-                $imageGroup['translation'] = $this->locale->get($imageGroupList['translation']);
-                $transformedImageGroupList['items'][] = $this->imageGroup->transform($imageGroup, $entity['type']);
+                $transformedImageGroup = $this->imageGroup->transform($imageGroup, $entity['type']);;
+                $routeEntity = ['entity' => $imageGroup['route'], 'type' => $entity['type']];
+                $transformedImageGroup['route'] = $this->routeTransformer->transform($routeEntity, $entity['type']);
+                $transformedImageGroup['translation'] = $emperor . ' ' . $coin;
+                $transformedImageGroupList['items'][] = $transformedImageGroup;
             }
             $transformed['image_group_lists'][] = $transformedImageGroupList;
         }

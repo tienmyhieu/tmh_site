@@ -2,7 +2,6 @@
 
 namespace lib\transformers;
 
-use lib\core\TmhDatabase;
 use lib\core\TmhLocale;
 
 require_once('TmhEmperorCoin.php');
@@ -27,6 +26,7 @@ readonly class TmhTransform
             'metal',
             'metal_emperor' => new TmhListEntity($this->locale, $this->routeTransformer),
             'metal_coin' => new TmhMetalCoin($this->imageGroup, $this->locale, $this->routeTransformer),
+            'metal_emperor_coin_group',
             'metal_emperor_coin' => new TmhEmperorCoin($this->imageGroup, $this->locale, $this->routeTransformer),
             default => new TmhSpecimen($this->imageGroup, $this->locale, $this->routeTransformer)
         };

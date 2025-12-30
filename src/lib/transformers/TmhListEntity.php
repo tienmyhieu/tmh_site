@@ -15,6 +15,7 @@ readonly class TmhListEntity
         $transformed = [];
         $transformed['title'] = $this->locale->get($entity['title']);
         $transformed['topic'] = $this->locale->get($entity['topic']);
+        $transformed['type'] = $entity['type'];
         $transformed['entity_lists'] = [];
         foreach ($entity['entity_lists'] as $entityList) {
             $transformedList = [];

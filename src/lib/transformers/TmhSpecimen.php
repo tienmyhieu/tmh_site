@@ -18,6 +18,7 @@ readonly class TmhSpecimen
         $transformed = [];
         $transformed['obverse'] = $this->locale->get($entity['obverse']);
         $transformed['reverse'] = $this->locale->get($entity['reverse']);
+        $transformed['type'] = $entity['type'];
         $transformedImageGroupList = [
             'translation' => $this->locale->get($entity['image_group_list']['translation']),
             'items'  => []
@@ -30,6 +31,8 @@ readonly class TmhSpecimen
                 $identifier = strtoupper($sourceRoute['code']) . ' ' . $imageGroup['identifier'];
                 $identifierPrefix = $transformedImageGroup['date'] . ' - ';
                 $transformedImageGroup['translation'] = $identifierPrefix . $identifier;
+            } else {
+                $transformedImageGroup['translation'] = '';
             }
             $transformedImageGroupList['items'][] = $transformedImageGroup;
         }
