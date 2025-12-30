@@ -15,6 +15,11 @@ readonly class TmhDomain
         $this->initializeDomain();
     }
 
+    public function getLanguage(): string
+    {
+        return substr($this->domain['locale'], 0, 2);
+    }
+
     public function getLocale(): string
     {
         return $this->domain['locale'];

@@ -1,7 +1,9 @@
 {
   "dated": "0",
   "diameter": "51.20",
+  "identifier": "661066069",
   "obverse": "qxfco1bg",
+  "source": "hjj5vwe5",
   "reverse": "hruripe1",
   "type": "",
   "variant": "",
@@ -12,8 +14,12 @@
       { "identifier": "661066069", "image_group": "fo0u12rq", "route": "", "source": "hjj5vwe5", "translation": "" }
     ]
   },
-  "upload_group_list": [
-    { "identifier": "661066069", "upload_group": "72sz9vcr", "route": "", "source": "hjj5vwe5", "translation": "" }
+  "upload_group_lists": [
+    { "translation": "",
+      "items": [
+        { "identifier": "661066069", "upload_group": "72sz9vcr", "route": "", "source": "hjj5vwe5", "translation": "" }
+      ]
+    }
   ],
   "citation_list": []
 }

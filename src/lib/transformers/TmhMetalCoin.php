@@ -7,7 +7,7 @@ use lib\core\TmhLocale;
 readonly class TmhMetalCoin
 {
     public function __construct(
-        private TmhImageGroup $imageGroup,
+        private TmhDatabaseTransformer $databaseTransformer,
         private TmhLocale $locale,
         private TmhRouteTransformer $routeTransformer
     ) {
@@ -27,7 +27,7 @@ readonly class TmhMetalCoin
             $transformedImageGroupList['items'] = [];
             $emperor = $this->locale->get($imageGroupList['translation']);
             foreach ($imageGroupList['items'] as $imageGroup) {
-                $transformedImageGroup = $this->imageGroup->transform($imageGroup, $entity['type']);;
+                $transformedImageGroup = $this->databaseTransformer->imageGroup($imageGroup['image_group']);;
                 $routeEntity = ['entity' => $imageGroup['route'], 'type' => $entity['type']];
                 $transformedImageGroup['route'] = $this->routeTransformer->transform($routeEntity, $entity['type']);
                 $transformedImageGroup['translation'] = $emperor . ' ' . $coin;

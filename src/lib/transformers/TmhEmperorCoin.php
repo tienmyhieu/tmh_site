@@ -9,7 +9,7 @@ readonly class TmhEmperorCoin
     private array $parentRoute;
 
     public function __construct(
-        private TmhImageGroup $imageGroup,
+        private TmhDatabaseTransformer $databaseTransformer,
         private TmhLocale $locale,
         private TmhRouteTransformer $routeTransformer
     ) {
@@ -29,7 +29,7 @@ readonly class TmhEmperorCoin
             $transformedImageGroupList['items'] = [];
             $imageGroups = $this->filterActiveImageGroups($imageGroupList['items']);
             foreach ($imageGroups as $imageGroup) {
-                $transformedImageGroup = $this->imageGroup->transform($imageGroup, $entity['type']);
+                $transformedImageGroup = $this->databaseTransformer->imageGroup($imageGroup['image_group']);
                 $transformedImageGroup['translation'] = $this->imageGroupTranslation($imageGroup);
                 $transformedImageGroup['route'] = $this->imageGroupRoute($imageGroup);
                 $transformedImageGroupList['items'][] = $transformedImageGroup;

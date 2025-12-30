@@ -12,7 +12,7 @@ use lib\core\TmhLocale;
 use lib\core\TmhRoute;
 use lib\core\TmhRouteFactory;
 use lib\html\TmhHtmlTransform;
-use lib\transformers\TmhImageGroup;
+use lib\transformers\TmhDatabaseTransformer;
 use lib\transformers\TmhRouteTransformer;
 use lib\transformers\TmhTransform;
 
@@ -24,7 +24,7 @@ require_once('lib/core/TmhLocale.php');
 require_once('lib/core/TmhRoute.php');
 require_once('lib/core/TmhRouteFactory.php');
 require_once('lib/html/TmhHtmlTransform.php');
-require_once('lib/transformers/TmhImageGroup.php');
+require_once('lib/transformers/TmhDatabaseTransformer.php');
 require_once('lib/transformers/TmhRouteTransformer.php');
 require_once('lib/transformers/TmhTransform.php');
 
@@ -36,7 +36,7 @@ $route = new TmhRoute($json);
 $routeFactory = new TmhRouteFactory($locale, $route);
 $entityFactory = new TmhEntityFactory($json, $routeFactory);
 $entity = $entityFactory->create();
-$imageGroupTransformer =  new TmhImageGroup($database, $locale);
+$imageGroupTransformer =  new TmhDatabaseTransformer($database, $locale);
 $routeTransformer = new TmhRouteTransformer($locale, $route);
 $transformer =  new TmhTransform($imageGroupTransformer, $locale, $routeTransformer);
 $htmlTransformer = new TmhHtmlTransform();

@@ -1,7 +1,9 @@
 {
   "dated": "1",
   "diameter": "50.52",
+  "identifier": "194",
   "obverse": "qxfco1bg",
+  "source": "8svsky3w",
   "reverse": "hruripe1",
   "type": "",
   "variant": "",
@@ -14,8 +16,12 @@
       { "identifier": "194", "image_group": "1u4nx4oa", "route": "", "source": "8svsky3w", "translation": "" }
     ]
   },
-  "upload_group_list": [
-    { "identifier": "1803013-114", "upload_group": "hgsg1ob8", "route": "", "source": "hjj5vwe5", "translation": "" }
+  "upload_group_lists": [
+    { "translation": "",
+      "items": [
+        { "identifier": "8", "upload_group": "szya9vrf", "route": "", "source": "e7e2tq5u", "translation": "" }
+      ]
+    }
   ],
   "citation_list": [
     { "lang": "en", "page": "306", "plate": "", "translation": "swn15bxv" }

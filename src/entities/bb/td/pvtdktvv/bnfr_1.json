@@ -1,8 +1,10 @@
 {
   "dated": "1",
   "diameter": "50.50",
+  "identifier": "Y12079",
   "obverse": "qxfco1bg",
   "reverse": "hruripe1",
+  "source": "ozgn52u1",
   "type": "",
   "variant": "",
   "weight": "32.77",
@@ -13,7 +15,9 @@
       { "identifier": "8-嗣-50", "image_group": "c4yld4kf", "route": "", "source": "524pcvrh", "translation": "" }
     ]
   },
-  "upload_group_list": [],
+  "upload_group_lists": [
+    {"translation": "", "items":  []}
+  ],
   "citation_list": [
     { "lang": "fr", "page": "", "plate": "33", "translation": "g24mcucr" },
     { "lang": "ja", "page": "224", "plate": "", "translation": "yo8nlu7d" }
