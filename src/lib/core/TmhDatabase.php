@@ -7,6 +7,8 @@ class TmhDatabase
     private array $images = [];
     private array $imageGroups = [];
     private array $inscriptions = [];
+    private array $uploads = [];
+    private array $uploadGroups = [];
 
     public function __construct(private readonly TmhJson $json)
     {
@@ -28,6 +30,19 @@ class TmhDatabase
     {
         $inscriptions = $this->getInscriptions();
         return in_array($uuid, array_keys($inscriptions)) ? $inscriptions[$uuid] : '';
+    }
+
+    public function upload(string $uuid): array
+    {
+        $uploads = $this->getUploads();
+        return in_array($uuid, array_keys($uploads)) ? $uploads[$uuid] : ['alt' => [], 'src' => '', 'url' => ''];
+    }
+
+    public function uploadGroup(string $uuid): array
+    {
+        $uploadGroups = $this->getUploadGroups();
+        $emptyUploadGroup = ['uploads' => [], 'type' => '0', 'translation' => ''];
+        return in_array($uuid, array_keys($uploadGroups)) ? $uploadGroups[$uuid] : $emptyUploadGroup;
     }
 
     private function getImages(): array
@@ -52,5 +67,21 @@ class TmhDatabase
             $this->inscriptions = $this->json->database('inscription');
         }
         return $this->inscriptions;
+    }
+
+    private function getUploads(): array
+    {
+        if (empty($this->uploads)) {
+            $this->uploads = $this->json->database('upload');
+        }
+        return $this->uploads;
+    }
+
+    private function getUploadGroups(): array
+    {
+        if (empty($this->uploadGroups)) {
+            $this->uploadGroups = $this->json->database('upload_group');
+        }
+        return $this->uploadGroups;
     }
 }

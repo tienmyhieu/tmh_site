@@ -31,4 +31,18 @@ readonly class TmhDatabaseTransformer
     {
         return $this->database->inscription($uuid);
     }
+
+    public function uploadGroup(string $uuid): array
+    {
+        $baseSrc = self::CDN . 'uploads/128/';
+        $uploadGroup = $this->database->uploadGroup($uuid);
+        $transformed = ['type' => $uploadGroup['type'], 'uploads' => []];
+        foreach ($uploadGroup['uploads'] as $uploadUuid) {
+            $upload = $this->database->upload($uploadUuid);
+            $uploadAlt = implode(' ', $this->locale->getMany($upload['alt']));
+            $imgSrc = $baseSrc . $upload['src'] . '.jpg';
+            $transformed['uploads'][] = ['alt' => $uploadAlt, 'src' => $imgSrc];
+        }
+        return $transformed;
+    }
 }

@@ -53,6 +53,32 @@ class TmhSpecimen
             $transformedImageGroupList['items'][] = $transformedImageGroup;
         }
         $transformed['image_group_list'] = $transformedImageGroupList;
+        foreach ($entity['upload_group_lists'] as $uploadGroupList) {
+            $transformedUploadGroupList = [];
+            if (0 < strlen($uploadGroupList['translation'])) {
+                $transformedUploadGroupList['translation'] = $this->locale->get($uploadGroupList['translation']);
+            }
+            foreach ($uploadGroupList['items'] as $uploadGroup) {
+                $transformedUploadGroup = $this->databaseTransformer->uploadGroup($uploadGroup['upload_group']);
+                $transformedUploads = ['type' => $transformedUploadGroup['type'], 'uploads' => []];
+                foreach ($transformedUploadGroup['uploads'] as $upload) {
+                    $uploadTitle = $upload['alt'];
+                    $uploadHref = str_replace('/128/', '/1024/', $upload['src']);
+                    if ($transformedUploadGroup['type'] == '1') {
+                        $route = [
+                            'href' => $uploadHref,
+                            'title' => $uploadTitle,
+                            'innerHtml' => ''
+                        ];
+                        $transformedUploads['uploads'][] = ['upload' => $upload, 'route' => $route];
+                    } else {
+
+                    }
+                }
+                $transformedUploadGroupList['uploads'] = $transformedUploads;
+            }
+            $transformed['upload_group_lists'][] = $transformedUploadGroupList;
+        }
         foreach ($this->sources as $source) {
             $transformed['key_values'][] = [
                 'key' => $this->locale->get('48w95ukn'),
